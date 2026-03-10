@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ranking Domingos RED PADEL</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="Ranking ELO Domingos 2da Categoría — RED PADEL Club, Vitacura">
+<meta property="og:title" content="Ranking Domingos RED PADEL">
+<meta property="og:description" content="Ranking ELO 2da Categoría · Temporada 2026 · RED PADEL Club Sirio Vitacura">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+input::placeholder{color:rgba(255,255,255,.2)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:0 0}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px}
+.mono{font-family:'DM Mono',monospace}
+
+/* HEADER */
+.header{background:linear-gradient(180deg,rgba(180,30,30,.15) 0%,#0a0a0a 100%);border-bottom:1px solid rgba(180,30,30,.15);padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden}
+.header-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:40px 40px}
+.header-inner{position:relative;z-index:1}
+.club-label{font-size:11px;letter-spacing:6px;color:rgba(255,255,255,.25);text-transform:uppercase;margin-bottom:6px;font-weight:500}
+.title{font-size:26px;font-weight:700;letter-spacing:-.5px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.7) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.subtitle{font-size:12px;color:rgba(255,255,255,.35);font-weight:500;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.2);display:inline-block}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.04)}
+.stat-val{font-size:20px;font-weight:700;color:#fff}
+.stat-label{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.8px}
+
+/* TABS */
+.tabs{display:flex;padding:12px 16px 0;border-bottom:1px solid rgba(255,255,255,.04);gap:4px}
+.tab{flex:1;padding:10px 0;border:none;background:0 0;color:rgba(255,255,255,.35);font-size:13px;font-weight:600;cursor:pointer;border-radius:8px 8px 0 0;border-bottom:2px solid transparent;font-family:'DM Sans',sans-serif;transition:all .2s}
+.tab.active{background:rgba(180,30,30,.15);color:#fff;border-bottom-color:rgba(180,30,30,.6)}
+
+/* CONTENT */
+.content{padding:12px 16px 80px;max-width:600px;margin:0 auto}
+.search{position:relative;margin-bottom:12px}
+.search input{width:100%;padding:10px 14px 10px 36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.2);font-size:14px}
+.updated{font-size:10px;color:rgba(255,255,255,.25);text-align:right;margin-bottom:8px;font-style:italic}
+
+/* PLAYER CARDS */
+.pc{border-radius:12px;padding:14px 16px;margin-bottom:6px;cursor:pointer;transition:all .2s}
+.pc.t3{background:linear-gradient(135deg,rgba(180,30,30,.12) 0%,rgba(20,20,20,.95) 60%);border:1px solid rgba(180,30,30,.3)}
+.pc.nm{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}
+.pr{display:flex;align-items:center;gap:12px}
+.rb{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.r1{font-size:18px;color:#FFD700;background:rgba(255,255,255,.05);border:1px solid rgba(255,215,0,.2)}
+.r2{font-size:18px;color:#C0C0C0;background:rgba(255,255,255,.05);border:1px solid rgba(192,192,192,.2)}
+.r3{font-size:18px;color:#CD7F32;background:rgba(255,255,255,.05);border:1px solid rgba(205,127,50,.2)}
+.ro{font-size:14px;color:rgba(255,255,255,.3)}
+.pi{flex:1;min-width:0}
+.pnr{display:flex;align-items:center;gap:8px}
+.pn{font-size:15px;font-weight:600;color:rgba(255,255,255,.92);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb{font-size:9px;font-weight:700;letter-spacing:1.2px;padding:2px 6px;border-radius:4px;flex-shrink:0}
+.te{color:#FFD700;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.13)}
+.to{color:#C0A040;background:rgba(192,160,64,.06);border:1px solid rgba(192,160,64,.13)}
+.tp{color:#A0A0A0;background:rgba(160,160,160,.05);border:1px solid rgba(160,160,160,.13)}
+.tbr{color:#CD7F32;background:rgba(205,127,50,.05);border:1px solid rgba(205,127,50,.13)}
+.wb{display:flex;align-items:center;gap:6px;margin-top:3px}
+.wbg{width:48px;height:4px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;position:relative}
+.wbf{position:absolute;left:0;top:0;bottom:0;border-radius:2px;transition:width .6s ease}
+.rc{text-align:right;flex-shrink:0}
+.rn{font-size:22px;font-weight:700;color:#fff;line-height:1}
+.rs{font-size:10px;color:rgba(255,255,255,.3);margin-top:2px}
+.ea{color:rgba(255,255,255,.2);font-size:12px;transition:transform .2s}
+.ea.op{transform:rotate(180deg)}
+
+/* DETAIL PANEL */
+.det{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);display:none}
+.det.op{display:block}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.sb{background:rgba(255,255,255,.03);border-radius:8px;padding:8px 10px;text-align:center}
+.sbl{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px}
+.sbv{font-size:16px;font-weight:700;color:#fff}
+.ht{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.hd{font-size:11px;color:rgba(255,255,255,.5);margin-bottom:4px;font-weight:600}
+.mr{display:flex;align-items:center;padding:5px 8px;border-radius:6px;margin-bottom:3px;font-size:12px;gap:8px}
+.mr.w{background:rgba(34,197,94,.06)}.mr.l{background:rgba(239,68,68,.06)}
+.mri{font-size:9px;font-weight:700;width:14px;text-align:center}
+.mri.w{color:#22c55e}.mri.l{color:#ef4444}
+.ms{font-weight:600;font-size:11px}.ms.w{color:#22c55e}.ms.l{color:#ef4444}
+
+/* RESULTS VIEW */
+.rd{margin-bottom:20px}
+.rdh{font-size:14px;font-weight:700;color:rgba(255,255,255,.8);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.rdt{color:rgba(180,30,30,.8);font-size:16px}
+.rdc{font-size:11px;color:rgba(255,255,255,.3);font-weight:400}
+.rl{font-size:10px;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600}
+.rm{display:flex;align-items:center;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);margin-bottom:4px;font-size:12px;gap:8px}
+.rt{flex:1}.rtw{color:rgba(255,255,255,.9);font-weight:600}.rtl{color:rgba(255,255,255,.4)}.rtlf{text-align:right}
+.rsc{padding:2px 8px;border-radius:6px;background:rgba(180,30,30,.15);color:rgba(255,255,255,.8);white-space:nowrap;flex-shrink:0;font-weight:700;font-size:14px}
+
+/* FOOTER */
+.footer{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(transparent,#0a0a0a 40%);padding:30px 20px 16px;text-align:center;pointer-events:none}
+.footer-text{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:2px;text-transform:uppercase}
+
+/* LOADING & ERROR */
+.ld{text-align:center;padding:60px 20px}
+.ls{width:32px;height:32px;border:3px solid rgba(255,255,255,.1);border-top-color:rgba(180,30,30,.6);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lt{font-size:13px;color:rgba(255,255,255,.4)}
+.em{text-align:center;padding:40px 20px;color:rgba(239,68,68,.8);font-size:13px}
+.rfb{display:inline-block;margin-top:12px;padding:8px 16px;background:rgba(180,30,30,.3);border:1px solid rgba(180,30,30,.4);border-radius:8px;color:#fff;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif}
+</style>
+</head>
+<body>
+
+<div class="header"><div class="header-grid"></div><div class="header-inner">
+<div class="club-label">RED PADEL CLUB</div>
+<h1 class="title">RANKING DOMINGOS RED PADEL</h1>
+<div class="subtitle"><span>Sistema ELO</span><span class="dot"></span><span>2da Categoría</span><span class="dot"></span><span>Temporada 2026</span></div>
+<div class="stats-bar">
+<div style="text-align:center"><div class="stat-val mono" id="sp">-</div><div class="stat-label">Jugadores</div></div>
+<div style="text-align:center"><div class="stat-val mono" id="sd">-</div><div class="stat-label">Domingos</div></div>
+<div style="text-align:center"><div class="stat-val mono" id="sm">-</div><div class="stat-label">Partidos</div></div>
+</div></div></div>
+
+<div class="tabs">
+<button class="tab active" onclick="sw('ranking',this)">Ranking</button>
+<button class="tab" onclick="sw('history',this)">Resultados</button>
+</div>
+
+<div class="content" id="ct">
+<div class="ld"><div class="ls"></div><div class="lt">Cargando ranking...</div></div>
+</div>
+
+<div class="footer"><div class="footer-text">RED PADEL · Club Sirio, Vitacura</div></div>
+
+<script>
+// ========================================
+// GOOGLE SHEET CONFIG
+// ========================================
+var SHEET_ID = '1KGVNWhSNvFdLqhv-_XDZ0VBrB9nVEGKpH9ngszc_75c';
+var SHEET_CSV = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv';
+
+// ========================================
+// ELO ENGINE (K=32 first 10 games, K=24 after)
+// ========================================
+function calcElo(matches) {
+  var R = {}, G = {}, H = [];
+  function gr(p) { if (!(p in R)) { R[p] = 1200; G[p] = 0; } return R[p]; }
+  function gk(p) { return (G[p] || 0) < 10 ? 32 : 24; }
+  function ex(a, b) { return 1 / (1 + Math.pow(10, (b - a) / 400)); }
+
+  for (var i = 0; i < matches.length; i++) {
+    var m = matches[i];
+    var ra = (gr(m.a1) + gr(m.a2)) / 2;
+    var rb = (gr(m.b1) + gr(m.b2)) / 2;
+    var ea = ex(ra, rb), eb = 1 - ea;
+    var aA, aB, km;
+    if (m.sa > m.sb) { aA = 1; aB = 0; km = 1 + 0.5 * Math.min((m.sa - m.sb) / 6, 1); }
+    else if (m.sb > m.sa) { aA = 0; aB = 1; km = 1 + 0.5 * Math.min((m.sb - m.sa) / 6, 1); }
+    else { aA = 0.5; aB = 0.5; km = 1; }
+    var teamA = [m.a1, m.a2], teamB = [m.b1, m.b2];
+    for (var j = 0; j < 2; j++) { R[teamA[j]] += gk(teamA[j]) * km * (aA - ea); G[teamA[j]]++; }
+    for (var j = 0; j < 2; j++) { R[teamB[j]] += gk(teamB[j]) * km * (aB - eb); G[teamB[j]]++; }
+    H.push({ d: m.date, r: m.round, a: teamA, b: teamB, s: m.sa + '-' + m.sb, w: m.sa > m.sb ? 'A' : (m.sb > m.sa ? 'B' : 'D') });
+  }
+
+  var names = Object.keys(R);
+  var rankings = [];
+  for (var i = 0; i < names.length; i++) {
+    var n = names[i], w = 0, l = 0, dp = {};
+    for (var j = 0; j < H.length; j++) {
+      var h = H[j];
+      if (h.a.indexOf(n) >= 0) { dp[h.d] = 1; if (h.w === 'A') w++; else l++; }
+      else if (h.b.indexOf(n) >= 0) { dp[h.d] = 1; if (h.w === 'B') w++; else l++; }
+    }
+    rankings.push({ name: n, rating: Math.round(R[n] * 10) / 10, games: G[n], wins: w, losses: l, win_rate: G[n] > 0 ? Math.round(w / G[n] * 1000) / 10 : 0, dates_played: Object.keys(dp).sort() });
+  }
+  rankings.sort(function(a, b) { return b.rating - a.rating; });
+
+  var allDates = {};
+  for (var i = 0; i < H.length; i++) allDates[H[i].d] = 1;
+  var dates = Object.keys(allDates).sort();
+
+  return { rankings: rankings, match_history: H, total_matchdays: dates.length, total_matches: H.length, last_updated: dates[dates.length - 1] || '' };
+}
+
+// ========================================
+// CSV PARSER
+// ========================================
+function parseCSV(csv) {
+  var lines = csv.split('\n'), M = [];
+  for (var i = 1; i < lines.length; i++) {
+    var line = lines[i].trim();
+    if (!line) continue;
+    var cols = [], cur = '', inQ = false;
+    for (var j = 0; j < line.length; j++) {
+      var ch = line[j];
+      if (ch === '"') inQ = !inQ;
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else cur += ch;
+    }
+    cols.push(cur.trim());
+    var dt = (cols[0] || '').replace(/"/g, '').trim();
+    var rd = parseInt(cols[1]);
+    var a1 = (cols[2] || '').replace(/"/g, '').trim();
+    var a2 = (cols[3] || '').replace(/"/g, '').trim();
+    var sa = parseInt(cols[4]);
+    var b1 = (cols[5] || '').replace(/"/g, '').trim();
+    var b2 = (cols[6] || '').replace(/"/g, '').trim();
+    var sb = parseInt(cols[7]);
+    if (dt && a1 && a2 && b1 && b2 && !isNaN(sa) && !isNaN(sb) && !isNaN(rd)) {
+      M.push({ date: dt, round: rd, a1: a1, a2: a2, sa: sa, b1: b1, b2: b2, sb: sb });
+    }
+  }
+  return M;
+}
+
+// ========================================
+// APP STATE
+// ========================================
+var DATA = null, VIEW = 'ranking', EXPANDED = null, SEARCH = '';
+
+// ========================================
+// LOAD DATA FROM GOOGLE SHEET
+// ========================================
+function loadData() {
+  fetch(SHEET_CSV)
+    .then(function(r) { if (!r.ok) throw new Error('Error de conexión'); return r.text(); })
+    .then(function(csv) {
+      var matches = parseCSV(csv);
+      if (!matches.length) throw new Error('No hay partidos en la planilla');
+      DATA = calcElo(matches);
+      document.getElementById('sp').textContent = DATA.rankings.length;
+      document.getElementById('sd').textContent = DATA.total_matchdays;
+      document.getElementById('sm').textContent = DATA.total_matches;
+      render();
+    })
+    .catch(function(err) {
+      document.getElementById('ct').innerHTML = '<div class="em">⚠ ' + err.message + '<br><button class="rfb" onclick="loadData()">Reintentar</button></div>';
+    });
+}
+
+// ========================================
+// HELPERS
+// ========================================
+function fd(d) {
+  if (!d) return '';
+  var p = d.split('-');
+  if (p.length !== 3) return d;
+  var m = ['','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  return parseInt(p[2]) + ' ' + m[parseInt(p[1])];
+}
+function tier(r) {
+  if (r >= 1300) return { l: 'ELITE', c: 'te' };
+  if (r >= 1220) return { l: 'ORO', c: 'to' };
+  if (r >= 1180) return { l: 'PLATA', c: 'tp' };
+  return { l: 'BRONCE', c: 'tbr' };
+}
+function wcolor(wr) { return wr >= 60 ? '#22c55e' : wr >= 40 ? '#eab308' : '#ef4444'; }
+function sw(v, el) { VIEW = v; var tabs = document.querySelectorAll('.tab'); for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active'); el.classList.add('active'); render(); }
+function tp(n) { EXPANDED = EXPANDED === n ? null : n; render(); }
+function os(v) { SEARCH = v.toLowerCase(); render(); }
+
+// ========================================
+// RENDER RANKING
+// ========================================
+function renderRanking() {
+  if (!DATA) return '<div class="ld"><div class="ls"></div><div class="lt">Cargando ranking...</div></div>';
+
+  var list = DATA.rankings;
+  if (SEARCH) list = list.filter(function(p) { return p.name.toLowerCase().indexOf(SEARCH) >= 0; });
+
+  var h = '<div class="search"><span class="search-icon">⌕</span><input type="text" placeholder="Buscar jugador..." oninput="os(this.value)" value="' + SEARCH + '"></div>';
+  h += '<div class="updated">Última jornada: Domingo ' + fd(DATA.last_updated) + ' 2026</div>';
+
+  if (!list.length) return h + '<div style="text-align:center;padding:40px;color:rgba(255,255,255,.25)">No se encontraron jugadores</div>';
+
+  for (var i = 0; i < list.length; i++) {
+    var p = list[i];
+    var rank = DATA.rankings.indexOf(p) + 1;
+    var t = tier(p.rating);
+    var wr = p.games > 0 ? p.wins / p.games * 100 : 0;
+    var isOpen = EXPANDED === p.name;
+    var esc = p.name.replace(/'/g, "\\'");
+
+    h += '<div class="pc ' + (rank <= 3 ? 't3' : 'nm') + '" onclick="tp(\'' + esc + '\')">';
+    h += '<div class="pr">';
+    h += '<div class="rb mono ' + (rank <= 3 ? 'r' + rank : 'ro') + '">' + (rank <= 3 ? rank : '#' + rank) + '</div>';
+    h += '<div class="pi"><div class="pnr"><span class="pn">' + p.name + '</span><span class="tb ' + t.c + '">' + t.l + '</span></div>';
+    h += '<div class="wb"><div class="wbg"><div class="wbf" style="width:' + wr + '%;background:' + wcolor(wr) + '"></div></div>';
+    h += '<span class="mono" style="font-size:11px;color:rgba(255,255,255,.4)">' + p.wins + 'W-' + p.losses + 'L</span></div></div>';
+    h += '<div class="rc"><div class="rn mono">' + Math.round(p.rating) + '</div>';
+    h += '<div class="rs">' + p.games + ' partidos · ' + p.dates_played.length + ' dom.</div></div>';
+    h += '<div class="ea ' + (isOpen ? 'op' : '') + '">▼</div></div>';
+
+    if (isOpen) {
+      h += '<div class="det op"><div class="sg">';
+      var stats = [{ l: 'ELO', v: p.rating.toFixed(1) }, { l: 'Victorias', v: p.wins }, { l: 'Derrotas', v: p.losses }, { l: 'Win Rate', v: p.win_rate + '%' }];
+      for (var s = 0; s < stats.length; s++) {
+        h += '<div class="sb"><div class="sbl">' + stats[s].l + '</div><div class="sbv mono">' + stats[s].v + '</div></div>';
+      }
+      h += '</div>';
+
+      // Player match history
+      var pm = [], byDate = {};
+      for (var j = 0; j < DATA.match_history.length; j++) {
+        var m = DATA.match_history[j];
+        if (m.a.indexOf(p.name) >= 0 || m.b.indexOf(p.name) >= 0) {
+          if (!byDate[m.d]) byDate[m.d] = [];
+          byDate[m.d].push(m);
+        }
+      }
+      var sortedDates = Object.keys(byDate).sort().reverse();
+
+      h += '<div class="ht">Historial de partidos</div>';
+      for (var d = 0; d < sortedDates.length; d++) {
+        var dt = sortedDates[d], ms = byDate[dt];
+        h += '<div style="margin-bottom:10px"><div class="hd">Domingo ' + fd(dt) + '</div>';
+        for (var k = 0; k < ms.length; k++) {
+          var m = ms[k];
+          var inA = m.a.indexOf(p.name) >= 0;
+          var won = (inA && m.w === 'A') || (!inA && m.w === 'B');
+          var partner = inA ? (m.a[0] === p.name ? m.a[1] : m.a[0]) : (m.b[0] === p.name ? m.b[1] : m.b[0]);
+          var opp = inA ? m.b : m.a;
+          var wl = won ? 'w' : 'l';
+          h += '<div class="mr ' + wl + '"><span class="mri ' + wl + '">' + (won ? 'W' : 'L') + '</span>';
+          h += '<span style="color:rgba(255,255,255,.5);font-size:11px">con <strong style="color:rgba(255,255,255,.7);font-weight:500">' + partner + '</strong></span>';
+          h += '<span style="color:rgba(255,255,255,.25);font-size:11px">vs</span>';
+          h += '<span style="color:rgba(255,255,255,.6);font-size:11px;flex:1">' + opp.join(' / ') + '</span>';
+          h += '<span class="ms mono ' + wl + '">' + m.s + '</span></div>';
+        }
+        h += '</div>';
+      }
+      h += '</div>';
+    }
+    h += '</div>';
+  }
+  return h;
+}
+
+// ========================================
+// RENDER RESULTS
+// ========================================
+function renderHistory() {
+  if (!DATA) return '';
+  var days = {};
+  for (var i = 0; i < DATA.match_history.length; i++) {
+    var m = DATA.match_history[i];
+    if (!days[m.d]) days[m.d] = [];
+    days[m.d].push(m);
+  }
+  var sortedDays = Object.keys(days).sort().reverse();
+
+  var h = '';
+  for (var i = 0; i < sortedDays.length; i++) {
+    var dt = sortedDays[i], ms = days[dt];
+    h += '<div class="rd"><div class="rdh"><span class="rdt">●</span>Domingo ' + fd(dt) + ' 2026 <span class="rdc">— ' + ms.length + ' partidos</span></div>';
+    for (var rn = 1; rn <= 3; rn++) {
+      var rm = ms.filter(function(m) { return m.r === rn; });
+      if (!rm.length) continue;
+      h += '<div style="margin-bottom:12px"><div class="rl">Ronda ' + rn + '</div>';
+      for (var j = 0; j < rm.length; j++) {
+        var m = rm[j];
+        h += '<div class="rm">';
+        h += '<div class="rt rtlf ' + (m.w === 'A' ? 'rtw' : 'rtl') + '">' + m.a.join(' / ') + '</div>';
+        h += '<div class="rsc mono">' + m.s + '</div>';
+        h += '<div class="rt ' + (m.w === 'B' ? 'rtw' : 'rtl') + '">' + m.b.join(' / ') + '</div>';
+        h += '</div>';
+      }
+      h += '</div>';
+    }
+    h += '</div>';
+  }
+  return h;
+}
+
+// ========================================
+// RENDER
+// ========================================
+function render() {
+  document.getElementById('ct').innerHTML = VIEW === 'ranking' ? renderRanking() : renderHistory();
+}
+
+// ========================================
+// GO
+// ========================================
+loadData();
+</script>
+</body>
+</html>
