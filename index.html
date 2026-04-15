@@ -287,7 +287,7 @@ var DATA = null, VIEW = 'ranking', EXPANDED = null, SEARCH = '', FAQ_OPEN = null
 // ========================================
 function loadData() {
   var csvUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&gid=0';
-  var proxy  = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(csvUrl);
+  var proxy  = 'https://corsproxy.io/?' + encodeURIComponent(csvUrl);
 
   function showError(msg) {
     document.getElementById('ct').innerHTML = '<div class="em">&#9888; ' + msg + '<br><button class="rfb" onclick="loadData()">Reintentar</button></div>';
@@ -540,7 +540,7 @@ function sw(v, el) {
   for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
   el.classList.add('active');
   render();
-}
+}h
 function tp(n) { EXPANDED = EXPANDED === n ? null : n; render(); }
 function os(v) { SEARCH = v.toLowerCase(); render(); }
 function tq(i) { FAQ_OPEN = FAQ_OPEN === i ? null : i; render(); }
