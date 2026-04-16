@@ -12,8 +12,7 @@
 <meta property="og:description" content="Ranking ELO 2da Categoría · Temporada 2026 · RED PADEL Club Sirio Vitacura">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0a0a0a;color:#fff;font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -21,7 +20,6 @@ input::placeholder{color:rgba(255,255,255,.2)}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:0 0}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px}
 .mono{font-family:'DM Mono',monospace}
 
-/* HEADER */
 .header{background:linear-gradient(180deg,rgba(180,30,30,.15) 0%,#0a0a0a 100%);border-bottom:1px solid rgba(180,30,30,.15);padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden}
 .header-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:40px 40px}
 .header-inner{position:relative;z-index:1}
@@ -33,19 +31,16 @@ input::placeholder{color:rgba(255,255,255,.2)}
 .stat-val{font-size:20px;font-weight:700;color:#fff}
 .stat-label{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.8px}
 
-/* TABS */
 .tabs{display:flex;padding:12px 16px 0;border-bottom:1px solid rgba(255,255,255,.04);gap:4px}
 .tab{flex:1;padding:10px 0;border:none;background:0 0;color:rgba(255,255,255,.35);font-size:13px;font-weight:600;cursor:pointer;border-radius:8px 8px 0 0;border-bottom:2px solid transparent;font-family:'DM Sans',sans-serif;transition:all .2s}
 .tab.active{background:rgba(180,30,30,.15);color:#fff;border-bottom-color:rgba(180,30,30,.6)}
 
-/* CONTENT */
 .content{padding:12px 16px 80px;max-width:600px;margin:0 auto}
 .search{position:relative;margin-bottom:12px}
 .search input{width:100%;padding:10px 14px 10px 36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.2);font-size:14px}
 .updated{font-size:10px;color:rgba(255,255,255,.25);text-align:right;margin-bottom:8px;font-style:italic}
 
-/* PLAYER CARDS */
 .pc{border-radius:12px;padding:14px 16px;margin-bottom:6px;cursor:pointer;transition:all .2s}
 .pc.t3{background:linear-gradient(135deg,rgba(180,30,30,.12) 0%,rgba(20,20,20,.95) 60%);border:1px solid rgba(180,30,30,.3)}
 .pc.nm{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}
@@ -72,7 +67,6 @@ input::placeholder{color:rgba(255,255,255,.2)}
 .ea{color:rgba(255,255,255,.2);font-size:12px;transition:transform .2s}
 .ea.op{transform:rotate(180deg)}
 
-/* DETAIL PANEL */
 .det{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);display:none}
 .det.op{display:block}
 .sg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
@@ -86,23 +80,22 @@ input::placeholder{color:rgba(255,255,255,.2)}
 .mri{font-size:9px;font-weight:700;width:14px;text-align:center;flex-shrink:0}
 .mri.w{color:#22c55e}.mri.l{color:#ef4444}
 .ms{font-weight:600;font-size:11px;flex-shrink:0}.ms.w{color:#22c55e}.ms.l{color:#ef4444}
-/* ELO delta badge en historial de jugador */
 .ed{font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;flex-shrink:0;font-family:'DM Mono',monospace}
 .ed.ep{color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.15)}
 .ed.en{color:#ef4444;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.15)}
+.cb{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;flex-shrink:0;font-family:'DM Mono',monospace;color:rgba(180,30,30,.9);background:rgba(180,30,30,.1);border:1px solid rgba(180,30,30,.2)}
 
-/* RESULTS VIEW */
 .rd{margin-bottom:20px}
 .rdh{font-size:14px;font-weight:700;color:rgba(255,255,255,.8);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .rdt{color:rgba(180,30,30,.8);font-size:16px}
 .rdc{font-size:11px;color:rgba(255,255,255,.3);font-weight:400}
 .rl{font-size:10px;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600}
 .rm{border-radius:8px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);margin-bottom:4px;font-size:12px;overflow:hidden}
-/* Fila principal del resultado */
-.rm-main{display:flex;align-items:center;padding:8px 10px;gap:8px}
+.rm-header{display:flex;align-items:center;gap:6px;padding:6px 10px 0;font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.rm-cancha{font-family:'DM Mono',monospace;font-weight:700;color:rgba(180,30,30,.9);padding:1px 6px;border-radius:3px;background:rgba(180,30,30,.1);border:1px solid rgba(180,30,30,.2);font-size:10px;letter-spacing:0}
+.rm-main{display:flex;align-items:center;padding:6px 10px 8px;gap:8px}
 .rt{flex:1}.rtw{color:rgba(255,255,255,.9);font-weight:600}.rtl{color:rgba(255,255,255,.4)}.rtlf{text-align:right}
 .rsc{padding:2px 8px;border-radius:6px;background:rgba(180,30,30,.15);color:rgba(255,255,255,.8);white-space:nowrap;flex-shrink:0;font-weight:700;font-size:14px}
-/* Fila de puntos en disputa */
 .rm-elo{display:flex;align-items:center;justify-content:space-between;padding:5px 10px;background:rgba(255,255,255,.015);border-top:1px solid rgba(255,255,255,.03)}
 .rm-elo-side{display:flex;align-items:center;gap:4px;font-size:10px;width:40%}
 .rm-elo-side.left{justify-content:flex-end}
@@ -113,7 +106,6 @@ input::placeholder{color:rgba(255,255,255,.2)}
 .rm-elo-val.neg{color:#ef4444}
 .rm-elo-lbl{color:rgba(255,255,255,.25);font-size:10px}
 
-/* FAQ */
 .faq-intro{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:20px;padding:12px 14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:10px}
 .faq-item{border-radius:10px;margin-bottom:8px;overflow:hidden;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.02)}
 .faq-q{padding:14px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;transition:background .15s}
@@ -129,11 +121,9 @@ input::placeholder{color:rgba(255,255,255,.2)}
 .faq-a .eg{margin-top:8px;padding:8px 12px;background:rgba(180,30,30,.08);border:1px solid rgba(180,30,30,.15);border-radius:8px;font-size:12px;color:rgba(255,255,255,.5);line-height:1.6}
 .faq-a .eg strong{color:rgba(180,30,30,.9)}
 
-/* FOOTER */
 .footer{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(transparent,#0a0a0a 40%);padding:30px 20px 16px;text-align:center;pointer-events:none}
 .footer-text{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:2px;text-transform:uppercase}
 
-/* LOADING & ERROR */
 .ld{text-align:center;padding:60px 20px}
 .ls{width:32px;height:32px;border:3px solid rgba(255,255,255,.1);border-top-color:rgba(180,30,30,.6);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -167,20 +157,11 @@ input::placeholder{color:rgba(255,255,255,.2)}
 <div class="footer"><div class="footer-text">RED PADEL · Club Sirio, Vitacura</div></div>
 
 <script>
-// ========================================
-// GOOGLE SHEET CONFIG
-// ========================================
 var SHEET_ID = '1KGVNWhSNvFdLqhv-_XDZ0VBrB9nVEGKpH9ngszc_75c';
+var SHEET_GID = '0';
 
-
-// ========================================
-// ELO ENGINE
-// K=32 primeros 10 partidos, K=24 después
-// Incluye deltas por partido para mostrar cuántos puntos se ganaron/perdieron
-// ========================================
 function calcElo(matches) {
   var R = {}, G = {}, H = [];
-
   function gr(p) { if (!(p in R)) { R[p] = 1200; G[p] = 0; } return R[p]; }
   function gk(p) { return (G[p] || 0) < 10 ? 32 : 24; }
   function ex(a, b) { return 1 / (1 + Math.pow(10, (b - a) / 400)); }
@@ -196,32 +177,23 @@ function calcElo(matches) {
     else { aA = 0.5; aB = 0.5; km = 1; }
 
     var teamA = [m.a1, m.a2], teamB = [m.b1, m.b2];
-
-    // Calcular deltas individuales antes de actualizar ratings
-    // delta = K * km * (resultado - esperado)
-    // Guardamos delta promedio por equipo para mostrarlo en resultados
     var dA1 = gk(m.a1) * km * (aA - ea);
     var dA2 = gk(m.a2) * km * (aA - ea);
     var dB1 = gk(m.b1) * km * (aB - eb);
     var dB2 = gk(m.b2) * km * (aB - eb);
 
-    // Delta promedio del equipo (lo que "se jugó" como equipo)
-    var avgDeltaA = (dA1 + dA2) / 2;
-    var avgDeltaB = (dB1 + dB2) / 2;
-
-    // Actualizar ratings
-    for (var j = 0; j < 2; j++) { R[teamA[j]] += (j === 0 ? dA1 : dA2); G[teamA[j]]++; }
-    for (var j = 0; j < 2; j++) { R[teamB[j]] += (j === 0 ? dB1 : dB2); G[teamB[j]]++; }
+    R[teamA[0]] += dA1; G[teamA[0]]++;
+    R[teamA[1]] += dA2; G[teamA[1]]++;
+    R[teamB[0]] += dB1; G[teamB[0]]++;
+    R[teamB[1]] += dB2; G[teamB[1]]++;
 
     H.push({
-      d: m.date, r: m.round,
+      d: m.date, r: m.round, c: m.cancha,
       a: teamA, b: teamB,
       s: m.sa + '-' + m.sb,
       w: m.sa > m.sb ? 'A' : (m.sb > m.sa ? 'B' : 'D'),
-      // Deltas individuales (para historial por jugador)
       deltaA1: dA1, deltaA2: dA2, deltaB1: dB1, deltaB2: dB2,
-      // Delta promedio equipo (para vista de resultados generales)
-      avgDeltaA: avgDeltaA, avgDeltaB: avgDeltaB
+      avgDeltaA: (dA1 + dA2) / 2, avgDeltaB: (dB1 + dB2) / 2
     });
   }
 
@@ -234,7 +206,13 @@ function calcElo(matches) {
       if (h.a.indexOf(n) >= 0) { dp[h.d] = 1; if (h.w === 'A') w++; else l++; }
       else if (h.b.indexOf(n) >= 0) { dp[h.d] = 1; if (h.w === 'B') w++; else l++; }
     }
-    rankings.push({ name: n, rating: Math.round(R[n] * 10) / 10, games: G[n], wins: w, losses: l, win_rate: G[n] > 0 ? Math.round(w / G[n] * 1000) / 10 : 0, dates_played: Object.keys(dp).sort() });
+    rankings.push({
+      name: n,
+      rating: Math.round(R[n] * 10) / 10,
+      games: G[n], wins: w, losses: l,
+      win_rate: G[n] > 0 ? Math.round(w / G[n] * 1000) / 10 : 0,
+      dates_played: Object.keys(dp).sort()
+    });
   }
   rankings.sort(function(a, b) { return b.rating - a.rating; });
 
@@ -245,77 +223,79 @@ function calcElo(matches) {
   return { rankings: rankings, match_history: H, total_matchdays: dates.length, total_matches: H.length, last_updated: dates[dates.length - 1] || '' };
 }
 
-// ========================================
-// CSV PARSER
-// ========================================
 function parseCSV(csv) {
   var lines = csv.split('\n'), M = [];
   for (var i = 1; i < lines.length; i++) {
-    var line = lines[i].trim();
-    if (!line) continue;
+    var line = lines[i].replace(/\r$/, '');
+    if (!line.trim()) continue;
     var cols = [], cur = '', inQ = false;
     for (var j = 0; j < line.length; j++) {
       var ch = line[j];
-      if (ch === '"') inQ = !inQ;
-      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      if (ch === '"') {
+        if (inQ && line[j+1] === '"') { cur += '"'; j++; }
+        else inQ = !inQ;
+      } else if (ch === ',' && !inQ) { cols.push(cur); cur = ''; }
       else cur += ch;
     }
-    cols.push(cur.trim());
-    var dt = (cols[0] || '').replace(/"/g, '').trim();
+    cols.push(cur);
+    var dt = (cols[0] || '').trim();
     var rd = parseInt(cols[1]);
-    // Col 2 = Cancha (skip). Players start at col 3.
-    var a1 = (cols[3] || '').replace(/"/g, '').trim();
-    var a2 = (cols[4] || '').replace(/"/g, '').trim();
+    var ct = (cols[2] || '').trim();
+    var a1 = (cols[3] || '').trim();
+    var a2 = (cols[4] || '').trim();
     var sa = parseInt(cols[5]);
-    var b1 = (cols[6] || '').replace(/"/g, '').trim();
-    var b2 = (cols[7] || '').replace(/"/g, '').trim();
+    var b1 = (cols[6] || '').trim();
+    var b2 = (cols[7] || '').trim();
     var sb = parseInt(cols[8]);
     if (dt && a1 && a2 && b1 && b2 && !isNaN(sa) && !isNaN(sb) && !isNaN(rd)) {
-      M.push({ date: dt, round: rd, a1: a1, a2: a2, sa: sa, b1: b1, b2: b2, sb: sb });
+      M.push({ date: dt, round: rd, cancha: ct, a1: a1, a2: a2, sa: sa, b1: b1, b2: b2, sb: sb });
     }
   }
   return M;
 }
 
-// ========================================
-// APP STATE
-// ========================================
 var DATA = null, VIEW = 'ranking', EXPANDED = null, SEARCH = '', FAQ_OPEN = null;
 
-// ========================================
-// LOAD DATA FROM GOOGLE SHEET
-// ========================================
 function loadData() {
-  var csvUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&gid=0';
-  var proxy  = 'https://corsproxy.io/?' + encodeURIComponent(csvUrl);
+  document.getElementById('ct').innerHTML = '<div class="ld"><div class="ls"></div><div class="lt">Cargando ranking...</div></div>';
+
+  var gvizUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&gid=' + SHEET_GID;
+  var csvExportUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&gid=' + SHEET_GID;
+
+  var sources = [
+    { name: 'gviz', url: gvizUrl },
+    { name: 'corsproxy', url: 'https://corsproxy.io/?' + encodeURIComponent(csvExportUrl) },
+    { name: 'codetabs', url: 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(csvExportUrl) }
+  ];
 
   function showError(msg) {
     document.getElementById('ct').innerHTML = '<div class="em">&#9888; ' + msg + '<br><button class="rfb" onclick="loadData()">Reintentar</button></div>';
   }
 
-  fetch(proxy)
-    .then(function(r) {
-      if (!r.ok) throw new Error('Error de red (' + r.status + ')');
-      return r.text();
-    })
-    .then(function(csv) {
-      if (!csv || csv.trim().length < 20 || csv.trim().charAt(0) === '<') {
-        throw new Error('La planilla no esta accesible publicamente');
-      }
-      var matches = parseCSV(csv);
-      if (!matches.length) throw new Error('No hay partidos validos en la planilla');
-      DATA = calcElo(matches);
-      document.getElementById('sp').textContent = DATA.rankings.length;
-      document.getElementById('sd').textContent = DATA.total_matchdays;
-      document.getElementById('sm').textContent = DATA.total_matches;
-      render();
-    })
-    .catch(function(err) { showError(err.message); });
+  function tryNext(i) {
+    if (i >= sources.length) { showError('No se pudo cargar la planilla'); return; }
+    var src = sources[i];
+    fetch(src.url)
+      .then(function(r) { if (!r.ok) throw new Error(src.name + ' HTTP ' + r.status); return r.text(); })
+      .then(function(csv) {
+        if (!csv || csv.length < 20) throw new Error(src.name + ': respuesta vacia');
+        if (csv.trim().charAt(0) === '<') throw new Error(src.name + ': HTML en lugar de CSV');
+        var matches = parseCSV(csv);
+        if (!matches.length) throw new Error(src.name + ': sin partidos validos');
+        DATA = calcElo(matches);
+        document.getElementById('sp').textContent = DATA.rankings.length;
+        document.getElementById('sd').textContent = DATA.total_matchdays;
+        document.getElementById('sm').textContent = DATA.total_matches;
+        render();
+      })
+      .catch(function(err) {
+        console.warn('Fuente ' + src.name + ' fallo:', err.message);
+        tryNext(i + 1);
+      });
+  }
+  tryNext(0);
 }
 
-// ========================================
-// HELPERS
-// ========================================
 function fd(d) {
   if (!d) return '';
   var p = d.split('-');
@@ -334,18 +314,16 @@ function fmtDelta(v) {
   var r = Math.round(v * 10) / 10;
   return (r >= 0 ? '+' : '') + r;
 }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-// ========================================
-// RENDER RANKING
-// ========================================
 function renderRanking() {
   if (!DATA) return '<div class="ld"><div class="ls"></div><div class="lt">Cargando ranking...</div></div>';
 
   var list = DATA.rankings;
   if (SEARCH) list = list.filter(function(p) { return p.name.toLowerCase().indexOf(SEARCH) >= 0; });
 
-  var h = '<div class="search"><span class="search-icon">⌕</span><input type="text" placeholder="Buscar jugador..." oninput="os(this.value)" value="' + SEARCH + '"></div>';
-  h += '<div class="updated">Última jornada: Domingo ' + fd(DATA.last_updated) + ' 2026</div>';
+  var h = '<div class="search"><span class="search-icon">&#8981;</span><input type="text" placeholder="Buscar jugador..." oninput="os(this.value)" value="' + esc(SEARCH) + '"></div>';
+  h += '<div class="updated">Ultima jornada: Domingo ' + fd(DATA.last_updated) + ' 2026</div>';
 
   if (!list.length) return h + '<div style="text-align:center;padding:40px;color:rgba(255,255,255,.25)">No se encontraron jugadores</div>';
 
@@ -355,27 +333,31 @@ function renderRanking() {
     var t = tier(p.rating);
     var wr = p.games > 0 ? p.wins / p.games * 100 : 0;
     var isOpen = EXPANDED === p.name;
-    var esc = p.name.replace(/'/g, "\\'");
+    var nameAttr = p.name.replace(/'/g, "\\'");
 
-    h += '<div class="pc ' + (rank <= 3 ? 't3' : 'nm') + '" onclick="tp(\'' + esc + '\')">';
+    h += '<div class="pc ' + (rank <= 3 ? 't3' : 'nm') + '" onclick="tp(\'' + nameAttr + '\')">';
     h += '<div class="pr">';
     h += '<div class="rb mono ' + (rank <= 3 ? 'r' + rank : 'ro') + '">' + (rank <= 3 ? rank : '#' + rank) + '</div>';
-    h += '<div class="pi"><div class="pnr"><span class="pn">' + p.name + '</span><span class="tb ' + t.c + '">' + t.l + '</span></div>';
+    h += '<div class="pi"><div class="pnr"><span class="pn">' + esc(p.name) + '</span><span class="tb ' + t.c + '">' + t.l + '</span></div>';
     h += '<div class="wb"><div class="wbg"><div class="wbf" style="width:' + wr + '%;background:' + wcolor(wr) + '"></div></div>';
     h += '<span class="mono" style="font-size:11px;color:rgba(255,255,255,.4)">' + p.wins + 'W-' + p.losses + 'L</span></div></div>';
     h += '<div class="rc"><div class="rn mono">' + Math.round(p.rating) + '</div>';
-    h += '<div class="rs">' + p.games + ' partidos · ' + p.dates_played.length + ' dom.</div></div>';
-    h += '<div class="ea ' + (isOpen ? 'op' : '') + '">▼</div></div>';
+    h += '<div class="rs">' + p.games + ' partidos &middot; ' + p.dates_played.length + ' dom.</div></div>';
+    h += '<div class="ea ' + (isOpen ? 'op' : '') + '">&#9660;</div></div>';
 
     if (isOpen) {
       h += '<div class="det op"><div class="sg">';
-      var stats = [{ l: 'ELO', v: p.rating.toFixed(1) }, { l: 'Victorias', v: p.wins }, { l: 'Derrotas', v: p.losses }, { l: 'Win Rate', v: p.win_rate + '%' }];
+      var stats = [
+        { l: 'ELO', v: p.rating.toFixed(1) },
+        { l: 'Victorias', v: p.wins },
+        { l: 'Derrotas', v: p.losses },
+        { l: 'Win Rate', v: p.win_rate + '%' }
+      ];
       for (var s = 0; s < stats.length; s++) {
         h += '<div class="sb"><div class="sbl">' + stats[s].l + '</div><div class="sbv mono">' + stats[s].v + '</div></div>';
       }
       h += '</div>';
 
-      // Historial de partidos del jugador
       var byDate = {};
       for (var j = 0; j < DATA.match_history.length; j++) {
         var m = DATA.match_history[j];
@@ -398,16 +380,13 @@ function renderRanking() {
           var partner = inA ? (m.a[0] === p.name ? m.a[1] : m.a[0]) : (m.b[0] === p.name ? m.b[1] : m.b[0]);
           var opp = inA ? m.b : m.a;
           var wl = won ? 'w' : 'l';
-
-          // Delta individual de este jugador en este partido
-          var myDelta;
-          if (inA) { myDelta = inA0 ? m.deltaA1 : m.deltaA2; }
-          else { myDelta = (m.b[0] === p.name) ? m.deltaB1 : m.deltaB2; }
+          var myDelta = inA ? (inA0 ? m.deltaA1 : m.deltaA2) : (m.b[0] === p.name ? m.deltaB1 : m.deltaB2);
           var deltaSign = myDelta >= 0 ? 'ep' : 'en';
 
           h += '<div class="mr ' + wl + '">';
           h += '<span class="mri ' + wl + '">' + (won ? 'W' : 'L') + '</span>';
-          h += '<span style="color:rgba(255,255,255,.5);font-size:11px;flex:1">con <strong style="color:rgba(255,255,255,.7);font-weight:500">' + partner + '</strong> <span style="color:rgba(255,255,255,.25)">vs</span> ' + opp.join(' / ') + '</span>';
+          if (m.c) h += '<span class="cb">C' + esc(m.c) + '</span>';
+          h += '<span style="color:rgba(255,255,255,.5);font-size:11px;flex:1">con <strong style="color:rgba(255,255,255,.7);font-weight:500">' + esc(partner) + '</strong> <span style="color:rgba(255,255,255,.25)">vs</span> ' + esc(opp.join(' / ')) + '</span>';
           h += '<span class="ms mono ' + wl + '">' + m.s + '</span>';
           h += '<span class="ed ' + deltaSign + '">' + fmtDelta(myDelta) + ' pts</span>';
           h += '</div>';
@@ -421,9 +400,6 @@ function renderRanking() {
   return h;
 }
 
-// ========================================
-// RENDER RESULTS
-// ========================================
 function renderHistory() {
   if (!DATA) return '';
   var days = {};
@@ -437,28 +413,27 @@ function renderHistory() {
   var h = '';
   for (var i = 0; i < sortedDays.length; i++) {
     var dt = sortedDays[i], ms = days[dt];
-    h += '<div class="rd"><div class="rdh"><span class="rdt">●</span>Domingo ' + fd(dt) + ' 2026 <span class="rdc">— ' + ms.length + ' partidos</span></div>';
+    h += '<div class="rd"><div class="rdh"><span class="rdt">&#9679;</span>Domingo ' + fd(dt) + ' 2026 <span class="rdc">&mdash; ' + ms.length + ' partidos</span></div>';
     for (var rn = 1; rn <= 3; rn++) {
       var rm = ms.filter(function(m) { return m.r === rn; });
       if (!rm.length) continue;
       h += '<div style="margin-bottom:12px"><div class="rl">Ronda ' + rn + '</div>';
       for (var j = 0; j < rm.length; j++) {
         var m = rm[j];
-        // Puntos disputados: el ganador ganó |avgDelta|, el perdedor perdió |avgDelta|
-        // Como son simétricos en valor absoluto usamos avgDeltaA (el ganador siempre tiene delta positivo)
         var ptW = m.w === 'A' ? m.avgDeltaA : m.avgDeltaB;
         var ptL = m.w === 'A' ? m.avgDeltaB : m.avgDeltaA;
-        var ptWf = fmtDelta(ptW); // positivo
-        var ptLf = fmtDelta(ptL); // negativo
+        var ptWf = fmtDelta(ptW);
+        var ptLf = fmtDelta(ptL);
 
         h += '<div class="rm">';
-        // Fila principal: equipos y score
+        if (m.c) {
+          h += '<div class="rm-header"><span class="rm-cancha">Cancha ' + esc(m.c) + '</span></div>';
+        }
         h += '<div class="rm-main">';
-        h += '<div class="rt rtlf ' + (m.w === 'A' ? 'rtw' : 'rtl') + '">' + m.a.join(' / ') + '</div>';
+        h += '<div class="rt rtlf ' + (m.w === 'A' ? 'rtw' : 'rtl') + '">' + esc(m.a.join(' / ')) + '</div>';
         h += '<div class="rsc mono">' + m.s + '</div>';
-        h += '<div class="rt ' + (m.w === 'B' ? 'rtw' : 'rtl') + '">' + m.b.join(' / ') + '</div>';
+        h += '<div class="rt ' + (m.w === 'B' ? 'rtw' : 'rtl') + '">' + esc(m.b.join(' / ')) + '</div>';
         h += '</div>';
-        // Fila secundaria: puntos en disputa
         h += '<div class="rm-elo">';
         h += '<div class="rm-elo-side left">';
         h += '<span class="rm-elo-val ' + (m.w === 'A' ? 'pos' : 'neg') + '">' + (m.w === 'A' ? ptWf : ptLf) + '</span>';
@@ -479,86 +454,71 @@ function renderHistory() {
   return h;
 }
 
-// ========================================
-// RENDER FAQ
-// ========================================
 var FAQS = [
   {
-    q: '¿Qué pasa si un jugador ganó sus dos primeros partidos y nunca más volvió? ¿Sigue siendo primero para siempre?',
-    a: '<p>No. El ELO no es un ranking de victorias acumuladas; es una estimación de tu nivel actual basada en toda la historia de partidos del grupo.</p><p>Cuando un jugador lleva semanas sin jugar, los demás siguen compitiendo. Si en esos partidos se enfrentan a rivales que a su vez le han ganado a jugadores con ELO alto, las estimaciones de fuerza de todos se ajustan. Un jugador ausente no baja su ELO directamente, pero otros pueden superarlo ganando partidos difíciles.</p><p>Además, los primeros 10 partidos de cualquier jugador tienen un factor K=32 (calibración rápida). Con solo 2 partidos, el ELO es una estimación muy preliminar. Con más partidos, el sistema tiene más información y la clasificación se vuelve más precisa y representativa del nivel real.</p><div class="eg"><strong>En la práctica:</strong> alguien que ganó 2-0 al inicio puede estar perfectamente bien ubicado en el top, pero un jugador que juega todos los domingos y gana consistentemente contra rivales fuertes lo va a pasar con el tiempo. El ranking premia la constancia y el nivel del rival que enfrentas, no solo el porcentaje de victorias.</div>'
+    q: 'Que pasa si un jugador gano sus dos primeros partidos y nunca mas volvio? Sigue siendo primero para siempre?',
+    a: '<p>No. El ELO no es un ranking de victorias acumuladas; es una estimacion de tu nivel actual basada en toda la historia de partidos del grupo.</p><p>Cuando un jugador lleva semanas sin jugar, los demas siguen compitiendo. Si en esos partidos se enfrentan a rivales fuertes y les ganan, sus ratings suben. Un jugador ausente no baja su ELO directamente, pero otros pueden superarlo ganando partidos dificiles.</p><p>Ademas, los primeros 10 partidos de cualquier jugador tienen un factor K=32 (calibracion rapida). Con solo 2 partidos, el ELO es una estimacion muy preliminar.</p><div class="eg"><strong>En la practica:</strong> alguien que gano 2-0 al inicio puede estar bien ubicado arriba, pero un jugador que juega todos los domingos y gana consistentemente contra rivales fuertes lo va a pasar con el tiempo.</div>'
   },
   {
-    q: '¿Cómo puede un jugador superar a alguien que tiene más ELO que él?',
-    a: '<p>Ganando partidos contra rivales fuertes. El sistema ELO funciona así: <strong>ganarle a alguien mejor que tú te da muchos puntos</strong>, y ganarle a alguien más débil te da pocos.</p><p>Si tú tienes 1.190 puntos y le ganas a un jugador de 1.260, puedes subir 20 o más puntos en un solo partido. Si ese mismo jugador de 1.260 pierde contra ti, cae. En dos o tres domingos intensos, las posiciones pueden cambiar bastante.</p><div class="eg"><strong>Ejemplo concreto:</strong> Pareja A tiene 1.210 ELO. Pareja B tiene 1.260 ELO. Se enfrentan. Pareja A gana 6-2.<br>Resultado: Pareja A sube ~+22 pts → queda en 1.232. Pareja B baja ~-22 pts → queda en 1.238.<br>En ese partido, la Pareja A los pasó.</div>'
+    q: 'Como puede un jugador superar a alguien que tiene mas ELO que el?',
+    a: '<p>Ganando partidos contra rivales fuertes. <strong>Ganarle a alguien mejor que tu te da muchos puntos</strong>, y ganarle a alguien mas debil te da pocos.</p><p>Si tu tienes 1.190 puntos y le ganas a un jugador de 1.260, puedes subir 20 o mas puntos en un solo partido. En dos o tres domingos intensos las posiciones pueden cambiar bastante.</p><div class="eg"><strong>Ejemplo:</strong> Pareja A 1.210, Pareja B 1.260. Se enfrentan. Pareja A gana 6-2.<br>Pareja A sube ~+22 pts -> 1.232. Pareja B baja ~-22 pts -> 1.238.<br>En ese partido, la Pareja A los paso.</div>'
   },
   {
-    q: '¿Por qué alguien con menos victorias puede estar más arriba en el ranking que alguien con más victorias?',
-    a: '<p>Porque no todas las victorias valen lo mismo. Si ganas siempre contra rivales débiles, acumulas victorias pero subes poco en ELO. Si pierdes contra los mejores del ranking pero por poco margen, también pierdes pocos puntos.</p><p>El ELO mide la calidad de tus victorias, no solo la cantidad. Un jugador que juega todos los domingos contra los primeros del ranking, aunque pierda algunos, puede tener un ELO alto porque el sistema reconoce que está compitiendo a un nivel exigente.</p>'
+    q: 'Por que alguien con menos victorias puede estar mas arriba que alguien con mas victorias?',
+    a: '<p>Porque no todas las victorias valen lo mismo. Si ganas siempre contra rivales debiles, acumulas victorias pero subes poco en ELO. Si pierdes contra los mejores del ranking pero por poco margen, pierdes pocos puntos.</p><p>El ELO mide la calidad de tus victorias, no solo la cantidad. Un jugador que juega contra los primeros del ranking, aunque pierda algunos, puede tener un ELO alto porque compite a un nivel exigente.</p>'
   },
   {
-    q: '¿Qué significa el número ELO? ¿Qué es un número bueno?',
-    a: '<p>Todos los jugadores parten desde <strong>1.200 puntos</strong>. Es el punto de partida neutral. A partir de ahí, el ELO sube o baja según los resultados.</p><p>Los rangos del ranking son:</p><div class="eg"><strong>ELITE · 1.300+</strong> → Los mejores del grupo. Ganan consistentemente contra rivales fuertes.<br><strong>ORO · 1.220–1.299</strong> → Jugadores sólidos con buen historial competitivo.<br><strong>PLATA · 1.180–1.219</strong> → Nivel intermedio-alto. En crecimiento.<br><strong>BRONCE · menos de 1.180</strong> → Jugadores en desarrollo. Con partidos el ELO sube rápido.</div><p>Los primeros 10 partidos de cada jugador son de calibración: el ELO cambia más rápido para ubicarte bien pronto. Después se estabiliza.</p>'
+    q: 'Que significa el numero ELO? Que es un numero bueno?',
+    a: '<p>Todos los jugadores parten desde <strong>1.200 puntos</strong>. A partir de ahi el ELO sube o baja segun los resultados.</p><p>Los rangos son:</p><div class="eg"><strong>ELITE &middot; 1.300+</strong> -> Los mejores del grupo.<br><strong>ORO &middot; 1.220-1.299</strong> -> Jugadores solidos.<br><strong>PLATA &middot; 1.180-1.219</strong> -> Nivel intermedio-alto.<br><strong>BRONCE &middot; menos de 1.180</strong> -> Jugadores en desarrollo.</div><p>Los primeros 10 partidos son de calibracion: el ELO cambia mas rapido para ubicarte bien. Despues se estabiliza.</p>'
   },
   {
-    q: '¿Por qué ganar 6-1 da más puntos que ganar 6-5?',
-    a: '<p>El sistema incluye un multiplicador de margen de victoria. La lógica es que un resultado contundente refleja una diferencia de nivel más clara que un partido muy cerrado. Ganar 6-1 sugiere que dominaste el partido; ganar 6-5 podría haber salido para cualquier lado.</p><p>El multiplicador va de 1.0 (empate técnico) hasta 1.5 (máxima diferencia). No es una penalización para el que pierde por poco; es un reconocimiento extra para el que gana por mucho.</p><div class="eg"><strong>Ejemplo:</strong> misma diferencia de ELO, mismo factor K. Si ganas 6-1 puedes ganar ~20 pts. Si ganas 6-5, puedes ganar ~13 pts. El partido era el mismo, pero la contundencia importa.</div>'
+    q: 'Por que ganar 6-1 da mas puntos que ganar 6-5?',
+    a: '<p>El sistema incluye un multiplicador de margen de victoria. Un resultado contundente refleja una diferencia de nivel mas clara que un partido muy cerrado.</p><p>El multiplicador va de 1.0 (empate tecnico) hasta 1.5 (maxima diferencia). No es una penalizacion al que pierde por poco; es un reconocimiento extra al que gana por mucho.</p><div class="eg"><strong>Ejemplo:</strong> misma diferencia de ELO, mismo K. Si ganas 6-1 puedes ganar ~20 pts. Si ganas 6-5, ~13 pts.</div>'
   },
   {
-    q: '¿Qué pasa con mi ELO si mi compañero es mucho mejor o mucho peor que yo?',
-    a: '<p>El ELO de pareja que se enfrenta al rival es el <strong>promedio</strong> de ambos jugadores. Si tu compañero tiene 1.280 y tú tienes 1.160, la pareja juega con un ELO de 1.220.</p><p>Esto significa que si ganas con un compañero muy fuerte, el sistema asume que era un resultado probable, y subes menos puntos que si hubieras ganado con un compañero de nivel similar al tuyo. Y al revés: si pierdes jugando con alguien mucho mejor que tus rivales, bajas muy pocos puntos porque el sistema esperaba que ganaras.</p><p>Tu ELO individual siempre refleja tus partidos específicos, sin importar quién fue tu compañero esa jornada.</p>'
+    q: 'Que pasa con mi ELO si mi companero es mucho mejor o mucho peor que yo?',
+    a: '<p>El ELO de pareja es el <strong>promedio</strong> de ambos jugadores. Si tu companero tiene 1.280 y tu 1.160, la pareja juega con ELO 1.220.</p><p>Si ganas con un companero muy fuerte, el sistema asume que era un resultado probable y subes menos puntos. Y al reves: si pierdes jugando con alguien mucho mejor, bajas muy pocos puntos.</p><p>Tu ELO individual siempre refleja tus partidos especificos, sin importar quien fue tu companero.</p>'
   },
   {
-    q: '¿Cuántos partidos necesito jugar para que mi ELO sea confiable?',
-    a: '<p>El sistema usa un factor de calibración: los primeros <strong>10 partidos</strong> tienen K=32 (cambios grandes, para ubicarte rápido). A partir del partido 11, el factor baja a K=24 (cambios más graduales, mayor estabilidad).</p><p>Con 5 o 6 partidos ya tienes una estimación razonable. Con 10 o más, tu ELO es bastante representativo de tu nivel real en este grupo.</p><div class="eg">Si llevas solo 2 o 3 domingos, tu ELO puede moverse bastante semana a semana. Eso es normal y esperado. No te preocupes si sube o baja mucho al principio; se estabiliza.</div>'
+    q: 'Cuantos partidos necesito jugar para que mi ELO sea confiable?',
+    a: '<p>Los primeros <strong>10 partidos</strong> tienen K=32 (cambios grandes, para ubicarte rapido). A partir del partido 11, K=24.</p><p>Con 5 o 6 partidos ya tienes una estimacion razonable. Con 10 o mas, tu ELO es bastante representativo de tu nivel real en este grupo.</p><div class="eg">Si llevas solo 2 o 3 domingos, tu ELO puede moverse bastante semana a semana. Es normal.</div>'
   }
 ];
 
 function renderFaq() {
-  var h = '<div class="faq-intro">Estas son las preguntas más frecuentes de los jugadores sobre cómo funciona el sistema ELO del Ranking Domingos.</div>';
+  var h = '<div class="faq-intro">Preguntas frecuentes de los jugadores sobre como funciona el sistema ELO del Ranking Domingos.</div>';
   for (var i = 0; i < FAQS.length; i++) {
     var isOpen = FAQ_OPEN === i;
     h += '<div class="faq-item">';
     h += '<div class="faq-q" onclick="tq(' + i + ')">';
     h += '<span class="faq-q-icon">P</span>';
     h += '<span class="faq-q-text">' + FAQS[i].q + '</span>';
-    h += '<span class="faq-arr ' + (isOpen ? 'op' : '') + '">▼</span>';
+    h += '<span class="faq-arr ' + (isOpen ? 'op' : '') + '">&#9660;</span>';
     h += '</div>';
-    if (isOpen) {
-      h += '<div class="faq-a op">' + FAQS[i].a + '</div>';
-    }
+    if (isOpen) h += '<div class="faq-a op">' + FAQS[i].a + '</div>';
     h += '</div>';
   }
   return h;
 }
 
-// ========================================
-// NAVIGATION / INTERACTION
-// ========================================
 function sw(v, el) {
   VIEW = v;
   var tabs = document.querySelectorAll('.tab');
   for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
   el.classList.add('active');
   render();
-}h
+}
 function tp(n) { EXPANDED = EXPANDED === n ? null : n; render(); }
 function os(v) { SEARCH = v.toLowerCase(); render(); }
 function tq(i) { FAQ_OPEN = FAQ_OPEN === i ? null : i; render(); }
 
-// ========================================
-// RENDER
-// ========================================
 function render() {
   if (VIEW === 'ranking') document.getElementById('ct').innerHTML = renderRanking();
   else if (VIEW === 'history') document.getElementById('ct').innerHTML = renderHistory();
   else if (VIEW === 'faq') document.getElementById('ct').innerHTML = renderFaq();
 }
 
-// ========================================
-// GO
-// ========================================
 loadData();
 </script>
 </body>
 </html>
-
